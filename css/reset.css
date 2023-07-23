@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-:root{
+:root {
     --color-primary: #6C9BCF;
     --color-danger: #FF0060;
     --color-success: #1B9C85;
@@ -22,6 +22,26 @@
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
 
+.text-muted {
+    color: var(--color-info-dark);
+}
+
+.primary {
+    color: var(--color-primary);
+}
+
+.danger {
+    color: var(--color-danger);
+}
+
+.success {
+    color: var(--color-success);
+}
+
+.warning {
+    color: var(--color-warning);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -32,18 +52,114 @@
     box-sizing: border-box;
 }
 
-html{
+html {
     font-size: 14px;
 }
 
-body{
+body {
     width: 100vw;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
     font-size: 0.88rem;
-    user-select: none; /* 禁止用户选择文本内容 */
+    user-select: none;
+    /* 禁止用户选择文本内容 */
     overflow-x: hidden;
     color: var(--color-dark);
     background-color: var(--color-background);
 }
 
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+.icon {
+    width: 5em;
+    height: 5em;
+    vertical-align: -0.15em;
+    color: var(--color-info-dark);
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.container {
+    width: 96%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 12rem auto 23rem;
+    grid-template-rows: repeat(3, 12rem);
+    gap: 1.8rem;
+}
+
+/*     aside-left start  */
+.aside-left {
+    
+    height: 100vh;
+}
+
+.aside-left .title {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+    
+}
+
+.aside-left .title .logo {
+    display: flex;
+}
+
+.aside-left .title .logo img {
+    width: 2rem;
+    height: 2rem;
+}
+.aside-left .sidebar .icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.aside-left .sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 88vh;
+    background-color: var(--color-white);
+    border-radius: 15px;
+    position: relative;
+    top: 1.5rem;
+    box-shadow: var(--box-shadow);
+}
+.aside-left .sidebar a {
+    display: flex;
+    color: var(--color-info-dark);
+    margin-left: 2rem;
+    height: 3.7rem;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.aside-left .sidebar a span{
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+}
+.aside-left .sidebar a:hover{
+    color: var(--color-primary);
+}
+.aside-left .sidebar a:hover .icon{
+    color: var(--color-primary);
+}
+.sidebar a:last-child{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+}
+
+
+/*     aside-left end  */
+.main {
+    background-color: #6C9BCF;
+}
+
+.aside-right {
+    background-color: #F7D060;
+}
