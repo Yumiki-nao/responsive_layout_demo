@@ -136,30 +136,72 @@ img {
     align-items: center;
     gap: 1rem;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
 }
 .aside-left .sidebar a span{
     font-size: 1.6rem;
-    transition: all 0.3s ease;
+    transition: all 1s ease;
 }
 .aside-left .sidebar a:hover{
     color: var(--color-primary);
+    transform: translateX(0.5rem);
 }
 .aside-left .sidebar a:hover .icon{
     color: var(--color-primary);
 }
-.sidebar a:last-child{
+.aside-left .sidebar a:last-child{
     position: absolute;
     bottom: 2rem;
     width: 100%;
 }
+.aside-left .sidebar a .message-count {
+    background-color: var(--color-danger);
+    color: var(--color-white);
+    font-size: 1rem;
+    border-radius: var(--border-radius-1);
+    padding: 2px 6px;
+}
+
+.aside-left .sidebar .active {
+    color: var(--color-primary);
+    background-color: var(--color-light);
+    margin-left: 0;
+    padding-left: 2rem;
+    border-left: 6px solid var(--color-primary);
+}
+.sidebar .active .icon{
+    color: var(--color-primary);
+}
+
+
+.aside-left .sidebar .active:hover{
+    color: var(--color-primary);
+    transform: translateX(0);
+}
 
 
 /*     aside-left end  */
+
+
+/* main start */
 .main {
-    background-color: #6C9BCF;
+    margin-top: 1.4rem;
+}
+.main .analyse {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,100px);
+    gap: 1.6rem;
+}
+.main .analyse > div {
+    background-color: var(--color-white);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
 }
 
+/* main end */
 .aside-right {
     background-color: #F7D060;
 }
