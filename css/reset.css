@@ -22,6 +22,15 @@
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
 
+.dark-mode-variables{
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
 .text-muted {
     color: var(--color-info-dark);
 }
@@ -50,6 +59,15 @@
     border: 0;
     text-decoration: none;
     box-sizing: border-box;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+h3{
+    font-weight: 500;
+    font-size: 0.87rem;
 }
 
 html {
@@ -304,6 +322,15 @@ img {
     height: 2.8rem;
     border-bottom: 1px solid var(--color-light);
     color: var(--color-dark-variant);
+}   
+.main table tbody .warning {
+    color: var(--color-warning);
+}
+.main table tbody .danger {
+    color: var(--color-danger);
+}
+.main table tbody .primary {
+    color: var(--color-primary);
 }
 .main table tbody tr:last-child td {
     border: none;
@@ -320,5 +347,137 @@ img {
 
 /* main end */
 .aside-right {
-    background-color: #F7D060;
+    margin-top: 1.3rem;
 }
+.aside-right .nav {
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+.aside-right .nav #menu-btn {
+    display: none;
+}
+.aside-right .nav .mode-change .change-btn {
+    width: 4rem;
+    height: 2rem;
+    /* background-color: skyblue; */
+    background-image:radial-gradient(at left top,rgb(201, 216, 255),rgb(0, 140, 255));
+    border-radius: 1rem;
+}
+
+.aside-right .nav .mode-change .change-btn #btn {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background-color: #FF0060;
+}
+
+.aside-right .nav .profile{
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+}
+.aside-right .nav .profile .profile-photo {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.aside-right .user-profile{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1rem;
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.aside-right .user-profile:hover {
+    box-shadow: var(--box-shadow);
+}
+.aside-right .user-profile img {
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+}
+.aside-right .user-profile h2{
+    margin-bottom: 0.2rem;
+}
+.aside-right .reminders {
+    margin-top: 2rem;
+}
+.aside-right .reminders .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+.aside-right .reminders .header .icon-box {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    position: relative;
+}
+.aside-right .reminders .header  .icon-box .icon {
+    width: 2rem;
+    height: 2rem;
+    color: var(--color-dark);
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+} 
+.aside-right .reminders .notification{
+    background-color: var(--color-white);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+    padding: 1.4rem var(--card-padding);
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.aside-right .reminders .notification .icon-box {
+    background-color: var(--color-danger);
+    border-radius: var(--border-radius-1);
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+}
+.aside-right .reminders .notification .icon-box .icon {
+    color: var(--color-white);
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    left: 0.3rem;
+    top: 0.3rem;
+}
+.aside-right .reminders .notification>.icon {
+    width: 2rem;
+    height: 2rem;
+}
+.aside-right .reminders .add-reminder{
+    border: 2px dashed var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.aside-right .reminders .add-reminder .icon {
+    color: var(--color-primary);
+    width: 2rem;
+    height: 2rem;
+}
+.aside-right .reminders .add-reminder h3 {
+    color: var(--color-primary);
+}
+
+
+
+

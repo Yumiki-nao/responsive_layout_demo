@@ -40,6 +40,23 @@ const Orders = [
 //     darkMode.querySelector('span:nth-child(2)').classList.toggle('active');
 // })
 
+const btn = document.getElementById('btn');
+const changeBtn = document.getElementById('change-btn')
+let isLight = true;
+
+btn.addEventListener('click',()=>{
+    if(isLight){
+        isLight = false;
+        btn.style.transform = 'translateX(2rem)';
+        changeBtn.style.backgroundImage='radial-gradient(at left top,rgb(136, 125, 162),rgb(47, 32, 82))';
+        document.body.classList.toggle('dark-mode-variables');
+    }else{
+        isLight = true;
+        btn.style.transform = 'translateX(0)';
+        changeBtn.style.backgroundImage='radial-gradient(at left top,rgb(201, 216, 255),rgb(0, 140, 255))';
+        document.body.classList.toggle('dark-mode-variables');
+    }
+})
 
 Orders.forEach(order => {
     console.log(order);
