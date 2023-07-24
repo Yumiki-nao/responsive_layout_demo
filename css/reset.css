@@ -190,16 +190,133 @@ img {
 .main .analyse {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3,100px);
     gap: 1.6rem;
 }
 .main .analyse > div {
+    padding: var(--card-padding);
     background-color: var(--color-white);
     border-radius: var(--card-border-radius);
     margin-top: 1rem;
     box-shadow: var(--box-shadow);
     cursor: pointer;
+    transition: all 0.3s ease;
 }
+.main .analyse>div:hover {
+    transform: translateY(-0.3rem);
+}
+.main .analyse .progresss{
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+.main .analyse .status {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main .analyse  svg {
+    width: 7rem;
+    height: 7rem;
+}
+.main .analyse svg circle{
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+}
+.main .analyse .sales svg circle{
+    stroke: var(--color-success);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+.main .analyse .visits svg circle{
+    stroke: var(--color-danger);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+.main .analyse .searches svg circle{
+    stroke: var(--color-primary);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+.main .analyse .progresss .percentage{
+    position: absolute;
+    top: 35px;
+    left: 30px;
+
+}
+
+/* new-users */
+.main .new-users {
+    margin-top: 1.3rem;
+}
+.main .new-users .user-list{
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.main .new-users .user-list:hover {
+    box-shadow: var(--box-shadow);
+}
+.main .new-users .user-list .user img{
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 0.4rem;
+    border-radius: 50%;
+} 
+.main .new-users .user-list .user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.main .recent-orders{
+    margin-top: 1.3rem;
+}
+
+.main .recent-orders h2{
+    margin-bottom: 0.8rem;
+}
+.main .recent-orders table{
+    background-color: var(--color-white);
+    width: 100%;
+    padding: var(--card-padding);
+    text-align: center;
+    border-radius: var(--card-border-radius);
+    transition: all 0.3s ease;
+}
+.main .recent-orders table:hover {
+    box-shadow: var(--box-shadow);
+}
+.main table tbody td{
+    height: 2.8rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+.main table tbody tr:last-child td {
+    border: none;
+}
+.main .recent-orders a {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--color-primary);
+    
+    
+}
+
 
 /* main end */
 .aside-right {
