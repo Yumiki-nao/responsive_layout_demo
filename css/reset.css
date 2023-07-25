@@ -106,7 +106,6 @@ img {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 12rem auto 23rem;
-    grid-template-rows: repeat(3, 12rem);
     gap: 1.8rem;
 }
 
@@ -134,6 +133,14 @@ img {
 .aside-left .sidebar .icon {
     width: 2rem;
     height: 2rem;
+}
+
+.aside-left #close-btn .icon{
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    display: none;
 }
 
 .aside-left .sidebar {
@@ -353,9 +360,17 @@ img {
     display: flex;
     justify-content: end;
     gap: 2rem;
+    position: relative;
 }
-.aside-right .nav #menu-btn {
+.aside-right .nav #menu-btn .icon {
     display: none;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    position: absolute;
+    left: 1rem;
+    top: 1.3rem;
+    
 }
 .aside-right .nav .mode-change .change-btn {
     width: 4rem;
@@ -439,9 +454,11 @@ img {
     margin-bottom: 0.7rem;
     padding: 1.4rem var(--card-padding);
     border-radius: var(--border-radius-2);
-    box-shadow: var(--box-shadow);
     cursor: pointer;
     transition: all 0.3s ease;
+}
+.aside-right .reminders .notification:hover{
+    box-shadow: var(--box-shadow);
 }
 .aside-right .reminders .notification .icon-box {
     background-color: var(--color-danger);
@@ -478,6 +495,115 @@ img {
     color: var(--color-primary);
 }
 
+@media screen and (max-width: 1200px) {
+    /* 在屏幕大于768且小于1200时 */
+    /* 1.左侧板栏 标题文字消失 */
+    /* 2.左侧边栏的文字消失，只剩下图标 , 最后一个图标往上*/
+    /* 3.中间部分：3个分析表盘各占一行*/
+    /* 4.新增用户部分变为 一行2个  */
+    .container{
+        width: 95%;
+        grid-template-columns: 7rem auto 23rem;
+    }
+    /* 1.左侧板栏 标题文字消失 */
+    .container .aside-left .title .logo h2 {
+        display: none;
+    }
+    /* 2.左侧边栏的文字消失，只剩下图标 ，最后一个图标往上*/
+    .container .aside-left .sidebar a {
+        width: 5.6rem;
+    }
+    .container .aside-left .sidebar a h3 {
+        display: none;
+    }
+    .container .aside-left .sidebar a:last-child {
+        position: relative;
+        margin-top: 1.8rem;
+    }
+    /* 3.中间部分：3个分析表盘各占一行*/
+    .main .analyse {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    /* 4.新增用户部分变为 一行2个  */
+    .main .new-users .user-list .user {
+        flex-basis: 40%;
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+    /* 当屏幕小于768时 */
+    /* 整体变为一列 */
+    /* 左侧边栏消失 变成一个按钮，点击再弹出侧边栏 */
+    /* 右侧部分调整到中间部分的下方 */
+    .container{
+        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 0 var(--padding-1);
+    }
+    .aside-left{
+        position: fixed;
+        background-color: var(--color-white);
+        width: 15rem;
+        z-index: 3;
+        box-shadow: 1rem 3rem 4rem var(--color-light);
+        height: 100vh;
+        left: -100%;
+        display: none;
+        animation: showMenu 0.4s ease forwards;
+    }
+    @keyframes showMenu {
+        to{
+            left: 0;
+        }
+    }
+    .aside-left .logo{
+        margin-left: 1rem;
+    }
+    .aside-left #close-btn .icon {
+        display: inline-block;
+    }
+
+    .container .aside-left .title .logo  h2{
+        display: inline;
+    }
+
+    .container .aside-left .sidebar a h3{
+        display: inline;
+    }
+    .container .aside-left .sidebar a{
+        width: 100%;
+        height: 3.4rem;
+    }
+
+    .aside-right{
+        width: 94%;
+        margin: 0 auto 4rem;
+    }
+
+    .aside-right .nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        align-items: center;
+        background-color: var(--color-white);
+        padding: 0 var(--padding-1);
+        height: 4.6rem;
+        width: 100%;
+        z-index: 2;
+        box-shadow: 0 1rem 1rem var(--color-light);
+        margin: 0;
+    }
+    .aside-right .nav #menu-btn .icon {
+        display: inline-block;
+    }
+
+    .aside-right .profile .info{
+        display: none;
+    }
+}
 
 
 

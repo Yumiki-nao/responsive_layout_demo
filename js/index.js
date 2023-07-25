@@ -41,7 +41,10 @@ const Orders = [
 // })
 
 const btn = document.getElementById('btn');
+const closeBtn = document.getElementById('close-btn')
 const changeBtn = document.getElementById('change-btn')
+const menuBtn = document.getElementById('menu-btn');
+const asideLeft = document.getElementById('aside-left')
 let isLight = true;
 
 btn.addEventListener('click',()=>{
@@ -56,6 +59,14 @@ btn.addEventListener('click',()=>{
         changeBtn.style.backgroundImage='radial-gradient(at left top,rgb(201, 216, 255),rgb(0, 140, 255))';
         document.body.classList.toggle('dark-mode-variables');
     }
+})
+
+menuBtn.addEventListener('click',()=>{
+    asideLeft.style.display='inline-block'
+})
+
+closeBtn.addEventListener('click',()=>{
+    asideLeft.style.display='none'
 })
 
 Orders.forEach(order => {

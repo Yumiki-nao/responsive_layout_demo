@@ -11,11 +11,16 @@
 <body >
     <div class="container">
         <!-- 左侧边 -->
-        <div class="aside-left">
+        <div class="aside-left" id="aside-left">
             <div class="title">
                 <div class="logo">
                     <img src="./images/logo.png">
                     <h2>Asmr<span class="danger">Prog</span></h2>
+                </div>
+                <div class="icon-box" id="close-btn">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-close"></use>
+                    </svg>
                 </div>
             </div>
             <div class="sidebar">
@@ -181,9 +186,11 @@
         <!-- 右侧边 -->
         <div class="aside-right">
             <div class="nav">
-                <button id="menu-btn">
-
-                </button>
+                <div class="icon-box" id="menu-btn">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-toggle-right"></use>
+                    </svg>
+                </div>
                 <div class="mode-change">
                     <div class="change-btn" id="change-btn">
                         <div id="btn"></div>
